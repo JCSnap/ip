@@ -1,5 +1,6 @@
 package bouncybob.util;
 
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -81,19 +82,19 @@ public class TaskFileHandler {
                         }
                         break;
                     case "D":
-                        String datetime = parts[3].trim();
+                        String datetime = parts[4].trim();
                         task = new Deadline(name, datetime);
                         if (parts.length > 4) {
-                            note = parts[4].trim();
+                            note = parts[3].trim();
                             task.setNote(note);
                         }
                         break;
                     case "E":
-                        String from = parts[3].trim();
-                        String to = parts[4].trim();
+                        String from = parts[4].trim();
+                        String to = parts[5].trim();
                         task = new Event(name, from, to);
                         if (parts.length > 5) {
-                            note = parts[5].trim();
+                            note = parts[3].trim();
                             task.setNote(note);
                         }
                         break;

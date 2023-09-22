@@ -56,6 +56,6 @@ public class Deadline extends Task {
      */
     @Override
     public String toFileFormat() {
-        return super.toFileFormat() + " | " + datetime + " | " + super.getNote();
+        return super.toFileFormat() + " | " + datetime;
     }
 }
